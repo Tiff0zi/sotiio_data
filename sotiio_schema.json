@@ -375,12 +375,12 @@
                       },
                       "uniqueItems": true,
                       "minItems": 1,
-                      "description": "Список уровней, на которых доступен атрибут"
+                      "description": ""
                     },
                     "type": {
                       "type": "string",
                       "const": "text",
-                      "description": "Тип атрибута: text"
+                      "description": ""
                     }
                   },
                   "required": [
@@ -455,12 +455,12 @@
                       },
                       "uniqueItems": true,
                       "minItems": 1,
-                      "description": "Список уровней, на которых доступен атрибут"
+                      "description": ""
                     },
                     "type": {
                       "type": "string",
                       "const": "number",
-                      "description": "Тип атрибута: number"
+                      "description": ""
                     }
                   },
                   "required": [
@@ -571,12 +571,12 @@
                       },
                       "uniqueItems": true,
                       "minItems": 1,
-                      "description": "Список уровней, на которых доступен атрибут"
+                      "description": ""
                     },
                     "type": {
                       "type": "string",
                       "const": "select",
-                      "description": "Тип атрибута: select"
+                      "description": "
                     }
                   },
                   "required": [
@@ -652,12 +652,12 @@
                       },
                       "uniqueItems": true,
                       "minItems": 1,
-                      "description": "Список уровней, на которых доступен атрибут"
+                      "description": ""
                     },
                     "type": {
                       "type": "string",
                       "const": "checkbox",
-                      "description": "Тип атрибута: checkbox"
+                      "description": ""
                     }
                   },
                   "required": [
@@ -705,7 +705,7 @@
                     "type": {
                       "type": "string",
                       "const": "date",
-                      "description": "Тип атрибута: date"
+                      "description": ""
                     },
                     "levels": {
                       "type": "array",
@@ -738,11 +738,11 @@
                       },
                       "uniqueItems": true,
                       "minItems": 1,
-                      "description": "Список уровней, на которых доступен атрибут"
+                      "description": ""
                     },
                     "required": {
                       "type": "boolean",
-                      "description": "Обязателен ли атрибут для заполнения"
+                      "description": ""
                     }
                   },
                   "required": [
