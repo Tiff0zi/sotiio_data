@@ -1,0 +1,808 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sotiio Map Schema",
+  "type": "object",
+  "properties": {
+    "sotiio": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": ""
+          },
+          "name": {
+            "type": "string",
+            "description": ""
+          },
+          "sota": {
+            "type": "array",
+            "description": "",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uid": {
+                  "type": "string",
+                  "description": ""
+                },
+                "node_id": {
+                  "type": "string",
+                  "description": ""
+                },
+                "xyz": {
+                  "type": "string",
+                  "description": ""
+                },
+                "label": {
+                  "type": "string",
+                  "description": ""
+                },
+                "meta": {
+                  "type": "object",
+                  "description": "",
+                  "properties": {
+                    "meta_text": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "attribute_text_id": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "value": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "priority": {
+                            "type": "integer",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "attribute_text_id",
+                          "value",
+                          "priority"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "meta_number": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "attribute_number_id": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "value": {
+                            "type": "number",
+                            "description": ""
+                          },
+                          "priority": {
+                            "type": "integer",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "attribute_number_id",
+                          "value",
+                          "priority"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "meta_select": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "attribute_select_id": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "value": {
+                            "oneOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            ],
+                            "description": ""
+                          },
+                          "priority": {
+                            "type": "integer",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "attribute_select_id",
+                          "value",
+                          "priority"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "meta_checkbox": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "attribute_checkbox_id": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "value": {
+                            "type": "boolean",
+                            "description": ""
+                          },
+                          "priority": {
+                            "type": "integer",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "attribute_checkbox_id",
+                          "value",
+                          "priority"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "meta_date": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "attribute_date_id": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "value": {
+                            "type": "string",
+                            "format": "date",
+                            "description": ""
+                          },
+                          "priority": {
+                            "type": "integer",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "attribute_date_id",
+                          "value",
+                          "format",
+                          "priority"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "relations": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "parent",
+                          "child",
+                          "linked",
+                          "affect_on",
+                          "depend_on"
+                        ],
+                        "description": ""
+                      },
+                      "target_sota": {
+                        "type": "object",
+                        "description": "",
+                        "properties": {
+                          "uid": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "node_id": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "label": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "uid",
+                          "node_id",
+                          "label"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "description": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": ""
+                      },
+                      "priority": {
+                        "type": "integer",
+                        "description": ""
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "type",
+                      "target_sota",
+                      "priority"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "color_sota": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "fill_sota": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "color_label": {
+                        "type": "string",
+                        "description": ""
+                      },
+                      "stroke_sota": {
+                        "type": "object",
+                        "description": "",
+                        "properties": {
+                          "color_stroke": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "width_stroke": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "color_stroke",
+                          "width_stroke"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "fill_sota",
+                      "color_label",
+                      "stroke_sota"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "uid",
+                "node_id",
+                "xyz",
+                "meta",
+                "relations",
+                "color_sota",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "attributes": {
+            "type": "object",
+            "description": "",
+            "properties": {
+              "attributes_text": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "attribute_text_id": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "value": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "levels": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "L1",
+                          "L2",
+                          "L3",
+                          "L4",
+                          "L2-1",
+                          "L2-2",
+                          "L2-3",
+                          "L2-4",
+                          "L2-5",
+                          "L2-6",
+                          "L3-1",
+                          "L3-2",
+                          "L3-3",
+                          "L3-4",
+                          "L3-5",
+                          "L3-6",
+                          "L4-1",
+                          "L4-2",
+                          "L4-3",
+                          "L4-4",
+                          "L4-5",
+                          "L4-6"
+                        ]
+                      },
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "description": "Список уровней, на которых доступен атрибут"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "text",
+                      "description": "Тип атрибута: text"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "attribute_text_id",
+                    "name",
+                    "priority",
+                    "required",
+                    "levels"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "attributes_number": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "attribute_number_id": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "value": {
+                      "type": "number",
+                      "description": ""
+                    },
+                    "decimals": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "levels": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "L1",
+                          "L2",
+                          "L3",
+                          "L4",
+                          "L2-1",
+                          "L2-2",
+                          "L2-3",
+                          "L2-4",
+                          "L2-5",
+                          "L2-6",
+                          "L3-1",
+                          "L3-2",
+                          "L3-3",
+                          "L3-4",
+                          "L3-5",
+                          "L3-6",
+                          "L4-1",
+                          "L4-2",
+                          "L4-3",
+                          "L4-4",
+                          "L4-5",
+                          "L4-6"
+                        ]
+                      },
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "description": "Список уровней, на которых доступен атрибут"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "number",
+                      "description": "Тип атрибута: number"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "attribute_number_id",
+                    "name",
+                    "priority",
+                    "required",
+                    "levels"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "attributes_select": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "attribute_select_id": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "value": {
+                      "oneOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      ],
+                      "description": ""
+                    },
+                    "multiple": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "expanded": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "options": {
+                      "type": "array",
+                      "description": "",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "type": "string",
+                            "description": ""
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "value",
+                          "name"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "levels": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "L1",
+                          "L2",
+                          "L3",
+                          "L4",
+                          "L2-1",
+                          "L2-2",
+                          "L2-3",
+                          "L2-4",
+                          "L2-5",
+                          "L2-6",
+                          "L3-1",
+                          "L3-2",
+                          "L3-3",
+                          "L3-4",
+                          "L3-5",
+                          "L3-6",
+                          "L4-1",
+                          "L4-2",
+                          "L4-3",
+                          "L4-4",
+                          "L4-5",
+                          "L4-6"
+                        ]
+                      },
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "description": "Список уровней, на которых доступен атрибут"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "select",
+                      "description": "Тип атрибута: select"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "attribute_select_id",
+                    "name",
+                    "priority",
+                    "required",
+                    "levels",
+                    "options"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "attributes_checkbox": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "attribute_checkbox_id": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "value": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "default": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": ""
+                    },
+                    "levels": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "L1",
+                          "L2",
+                          "L3",
+                          "L4",
+                          "L2-1",
+                          "L2-2",
+                          "L2-3",
+                          "L2-4",
+                          "L2-5",
+                          "L2-6",
+                          "L3-1",
+                          "L3-2",
+                          "L3-3",
+                          "L3-4",
+                          "L3-5",
+                          "L3-6",
+                          "L4-1",
+                          "L4-2",
+                          "L4-3",
+                          "L4-4",
+                          "L4-5",
+                          "L4-6"
+                        ]
+                      },
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "description": "Список уровней, на которых доступен атрибут"
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "checkbox",
+                      "description": "Тип атрибута: checkbox"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "attribute_checkbox_id",
+                    "name",
+                    "priority",
+                    "required",
+                    "levels"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "attributes_date": {
+                "type": "array",
+                "description": "",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "attribute_date_id": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "value": {
+                      "type": "string",
+                      "format": "date",
+                      "description": ""
+                    },
+                    "format": {
+                      "type": "string",
+                      "enum": [
+                        "YYYY-MM-DD",
+                        "DD.MM.YYYY",
+                        "MM/DD/YYYY",
+                        "YYYY.MM.DD",
+                        "YYYY",
+                        "MM.YYYY"
+                      ],
+                      "description": ""
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "description": ""
+                    },
+                    "type": {
+                      "type": "string",
+                      "const": "date",
+                      "description": "Тип атрибута: date"
+                    },
+                    "levels": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "L1",
+                          "L2",
+                          "L3",
+                          "L4",
+                          "L2-1",
+                          "L2-2",
+                          "L2-3",
+                          "L2-4",
+                          "L2-5",
+                          "L2-6",
+                          "L3-1",
+                          "L3-2",
+                          "L3-3",
+                          "L3-4",
+                          "L3-5",
+                          "L3-6",
+                          "L4-1",
+                          "L4-2",
+                          "L4-3",
+                          "L4-4",
+                          "L4-5",
+                          "L4-6"
+                        ]
+                      },
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "description": "Список уровней, на которых доступен атрибут"
+                    },
+                    "required": {
+                      "type": "boolean",
+                      "description": "Обязателен ли атрибут для заполнения"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "attribute_date_id",
+                    "value",
+                    "format",
+                    "priority",
+                    "required",
+                    "levels"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": ""
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": ""
+          },
+          "author": {
+            "type": "string",
+            "description": ""
+          },
+          "updated_by": {
+            "type": "string",
+            "description": ""
+          },
+          "version": {
+            "type": "string",
+            "description": ""
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "active",
+              "archived"
+            ],
+            "description": ""
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "sota"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "sotiio"
+  ],
+  "additionalProperties": false
+}
