@@ -91,8 +91,7 @@
                         },
                         "required": [
                           "attribute_number_id",
-                          "value",
-                          "priority"
+                          "value"
                         ],
                         "additionalProperties": false
                       }
@@ -128,8 +127,7 @@
                         },
                         "required": [
                           "attribute_select_id",
-                          "value",
-                          "priority"
+                          "value"
                         ],
                         "additionalProperties": false
                       }
@@ -155,8 +153,7 @@
                         },
                         "required": [
                           "attribute_checkbox_id",
-                          "value",
-                          "priority"
+                          "value"
                         ],
                         "additionalProperties": false
                       }
@@ -183,9 +180,7 @@
                         },
                         "required": [
                           "attribute_date_id",
-                          "value",
-                          "format",
-                          "priority"
+                          "value"
                         ],
                         "additionalProperties": false
                       }
@@ -349,6 +344,7 @@
                       "items": {
                         "type": "string",
                         "enum": [
+                          "ALL",
                           "L1",
                           "L2",
                           "L3",
@@ -370,7 +366,8 @@
                           "L4-3",
                           "L4-4",
                           "L4-5",
-                          "L4-6"
+                          "L4-6",
+                          NULL
                         ]
                       },
                       "uniqueItems": true,
@@ -429,6 +426,7 @@
                       "items": {
                         "type": "string",
                         "enum": [
+                          "ALL",
                           "L1",
                           "L2",
                           "L3",
@@ -450,7 +448,8 @@
                           "L4-3",
                           "L4-4",
                           "L4-5",
-                          "L4-6"
+                          "L4-6",
+                          NULL
                         ]
                       },
                       "uniqueItems": true,
@@ -545,6 +544,7 @@
                       "items": {
                         "type": "string",
                         "enum": [
+                          "ALL",
                           "L1",
                           "L2",
                           "L3",
@@ -566,7 +566,8 @@
                           "L4-3",
                           "L4-4",
                           "L4-5",
-                          "L4-6"
+                          "L4-6",
+                          NULL
                         ]
                       },
                       "uniqueItems": true,
@@ -626,6 +627,7 @@
                       "items": {
                         "type": "string",
                         "enum": [
+                          "ALL",
                           "L1",
                           "L2",
                           "L3",
@@ -647,7 +649,8 @@
                           "L4-3",
                           "L4-4",
                           "L4-5",
-                          "L4-6"
+                          "L4-6",
+                          NULL
                         ]
                       },
                       "uniqueItems": true,
@@ -678,6 +681,10 @@
                   "type": "object",
                   "properties": {
                     "attribute_date_id": {
+                      "type": "string",
+                      "description": ""
+                    },
+                    "name": {
                       "type": "string",
                       "description": ""
                     },
