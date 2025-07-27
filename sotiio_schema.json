@@ -734,7 +734,6 @@
                   "required": [
                     "type",
                     "attribute_date_id",
-                    "value",
                     "format",
                     "priority",
                     "required",
