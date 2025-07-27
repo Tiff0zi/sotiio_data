@@ -56,16 +56,11 @@
                           "value": {
                             "type": "string",
                             "description": ""
-                          },
-                          "priority": {
-                            "type": "integer",
-                            "description": ""
                           }
                         },
                         "required": [
                           "attribute_text_id",
-                          "value",
-                          "priority"
+                          "value"
                         ],
                         "additionalProperties": false
                       }
@@ -82,10 +77,6 @@
                           },
                           "value": {
                             "type": "number",
-                            "description": ""
-                          },
-                          "priority": {
-                            "type": "integer",
                             "description": ""
                           }
                         },
@@ -119,10 +110,6 @@
                               }
                             ],
                             "description": ""
-                          },
-                          "priority": {
-                            "type": "integer",
-                            "description": ""
                           }
                         },
                         "required": [
@@ -144,10 +131,6 @@
                           },
                           "value": {
                             "type": "boolean",
-                            "description": ""
-                          },
-                          "priority": {
-                            "type": "integer",
                             "description": ""
                           }
                         },
@@ -171,10 +154,6 @@
                           "value": {
                             "type": "string",
                             "format": "date",
-                            "description": ""
-                          },
-                          "priority": {
-                            "type": "integer",
                             "description": ""
                           }
                         },
