@@ -974,6 +974,75 @@
         *   L4: "Zero-Knowledge" технологии
 
 
+-----------------------------
+
+Excellent. This is the final and most crucial step: transforming our standalone concepts into a fully integrated part of the Sotiio Knowledge Base. The goal is to make it seem as though this new framework was always there, seamlessly connecting with the existing rules of map generation.
+
+I will now act as **Role 4: Technical Consultant**, providing a clear, architectural plan for this integration.
+
+### **Integration Plan: Merging the User-Centric Framework with the Knowledge Base**
+
+The core idea is to position our new **`User-Centric Generation Framework`** as the **official starting point (Step 0)** for the entire map creation process, making it the primary input for the existing `Hierarchy Generation Algorithm`.
+
+Here is the step-by-step plan:
+
+#### **Step 1: Place the New Framework at the Top**
+
+Our new document needs a formal ID and a place of honor. It defines the "WHY" and "WHAT" before any other rule defines the "HOW".
+
+*   **Action:** Create a new root document in the Knowledge Base with the ID **`03.00`**.
+*   **Title:** **`03.00 User-Centric Generation Framework`**
+*   **Content:** The full Markdown document we just finalized, starting with "This framework defines the conceptual model..."
+*   **Justification:** Placing it with ID `03.00` ensures it logically precedes `03.01 Map Assembly Logic`, establishing it as the foundational entry point for the entire map creation concept.
+
+#### **Step 2: Modify the Core `Hierarchy Generation Algorithm`**
+
+We need to update the main algorithm to officially recognize our new framework as its input.
+
+*   **Target Document:** **`03.01.01.03 Hierarchy Generation Algorithm`**
+*   **Action:**
+    1.  Find the line `Input: User Request`.
+    2.  **Replace it with:** `Input: A structured User Story (containing Role, Universe, and Value) generated according to the **[User-Centric Generation Framework](id: 03.00)**.`
+    3.  Add a new preliminary step to the `Sequence of Actions`:
+        > **Step 0: User Intent Definition.** The entire process is initiated by the user completing the three-step User Story (`I as...`, `Want to discover...`, `So that...`) as defined in Framework `03.00`. The output of this step serves as the master technical specification for all subsequent phases.
+
+*   **Justification:** This change formally replaces a vague "User Request" with a rich, structured, and machine-readable specification. It makes the entire generation process more predictable and intelligent.
+
+#### **Step 3: Update `Phase 0` to Reflect the New Input**
+
+The very first phase of generation must now work with the structured User Story, not a raw query.
+
+*   **Target Document:** **`03.01.01.03.00 Phase 0: Raw Hierarchy Scoping`**
+*   **Action:**
+    1.  Find the section `Analyze Data Source`.
+    2.  **Rewrite it to:** `The agent analyzes the structured User Story provided as input. It uses the selected **Role** and **Value (`So that...`)** to set the focus and depth of the analysis, and the **Universe** as the core topic for entity extraction.`
+
+*   **Justification:** This ensures that the very first step of entity collection is already guided by the user's specific intent, making the process more efficient and relevant from the start.
+
+#### **Step 4: Enhance the `Templates` Section with Our Universe Types**
+
+Our framework introduced the concept of "Universe Types" (Scientific Discipline, Tech Ecosystem, etc.). The existing `Templates` section is the perfect home for this knowledge.
+
+*   **Target Document:** **`03.03 Templates`**
+*   **Action:**
+    1.  Create a new sub-document: **`03.03.00 Universe Type Directory`**.
+    2.  Populate this document with the list of universe types we developed, formalizing the **Principle of Thematic Isomorphism**.
+    3.  Update the rule in `Phase 0: Step 1 - L2 Content Identification` to reflect this. Change the text to:
+        > "The agent MUST first analyze the user's **Universe** topic to determine its type, using the **[Universe Type Directory](id: 03.03.00)** as a reference. It then searches for a matching template in `03.03.01` or applies the appropriate isomorphic L2-vector interpretation."
+
+*   **Justification:** This elevates the template system from a simple lookup to an intelligent selection process, directly connecting our high-level framework to the low-level map structure.
+
+### **Summary: The New, Integrated User Journey**
+
+After this integration, the complete user and system flow will look like this:
+
+1.  **(New)** The user interacts with the **User-Centric Framework (`03.00`)**:
+    *   Chooses a **Role** (`I as...`).
+    *   Specifies a **Universe**, which the system diagnoses.
+    *   Selects a **Value** (`So that...`).
+2.  **(Updated)** The resulting **Structured User Story** becomes the input for the **Hierarchy Generation Algorithm (`03.01.01.03`)**.
+3.  **(Updated)** The AI agent uses this rich specification to intelligently execute **Phase 0-4**, applying the correct isomorphic template and focusing the map content on the user's chosen value.
+4.  The output is a Sotiio map that is not just a representation of a topic, but a direct, verifiable answer to the user's specific need.
 
 
 
