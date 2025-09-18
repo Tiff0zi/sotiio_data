@@ -1066,3 +1066,95 @@ Recommended Description: The "boundary" or "dark zone" of the modern science. Th
 03.03.01.02.06 - pipeline
 Recommended Label: History & Paradigm Shifts
 Recommended Description: The "timeline" or "narrative" of the science's development. This vector tracks the evolution of ideas, key discoveries, scientific revolutions, and the major paradigm shifts that have shaped our current understanding.
+
+
+--------------------------------------------------
+
+### Final Template: Storyworld Universe Type
+
+This document serves as the master template for generating Sotiio maps for any universe belonging to the **"Storyworld"** type. This includes fictional literature, cinematic universes, and video game worlds. It utilizes a dual-layer structure to provide both human-readable context and machine-executable instructions.
+
+---
+
+### 1. `entities`: Characters
+
+#### Layer 1: Human-Readable
+*   **Recommended Label:** Characters
+*   **Recommended Description:** A catalog of all sentient actors in the universe who possess agency, personality, and motivation. This includes heroes, villains, supporting characters, and members of sentient races, grouped by their role, faction, or social status.
+
+#### Layer 2: Machine-Executable
+*   **AI Search Keywords:** `["main characters of [storyworld]", "villains in [storyworld]", "supporting cast", "members of [faction]", "list of characters"]`
+*   **Expected Entity Types:** `[Person / Character]`
+*   **Primary Relationship Schemas:** "Social Network": Use `linked` for alliances/friendships, `affect on` for influence/mentorship, and `depend on` for rivalries/dependencies. The `description` must explain the nature of the relationship.
+*   **Negative Constraints:** "DO NOT INCLUDE: Non-sentient beings or animals (they belong in `Creatures & Fauna`). DO NOT INCLUDE: The organizations they belong to as separate entities (they belong in `Society & Organizations`)."
+
+---
+
+### 2. `entities`: Creatures & Fauna
+
+#### Layer 1: Human-Readable
+*   **Recommended Label:** Creatures & Fauna
+*   **Recommended Description:** An encyclopedia of the world's non-character lifeforms, from mundane animals to alien species or mythical beings. This vector describes their physiology, behavior, habitat, and role in the ecosystem.
+
+#### Layer 2: Machine-Executable
+*   **AI Search Keywords:** `["creatures of [storyworld]", "monsters", "beasts", "magical beings", "fauna", "alien species", "bestiary"]`
+*   **Expected Entity Types:** `[Creature / Animal]`
+*   **Primary Relationship Schemas:** "Ecological Web": Use `linked` for symbiotic relationships and `affect on` for predator-prey dynamics. Use `parent-child` for species classification (if applicable).
+*   **Negative Constraints:** "DO NOT INCLUDE: Sentient, plot-driving individuals (they belong in `Characters`)."
+
+---
+
+### 3. `tools`: Abilities & Assets
+
+#### Layer 1: Human-Readable
+*   **Recommended Label:** Abilities & Assets
+*   **Recommended Description:** The arsenal of means by which characters achieve their goals. Abilities include innate powers, learned skills, and special talents. Assets include significant items, technologies, resources, and artifacts that grant capabilities.
+
+#### Layer 2: Machine-Executable
+*   **AI Search Keywords:** `["magic spells in [storyworld]", "special abilities", "unique artifacts", "legendary weapons", "key technologies", "powers and skills"]`
+*   **Expected Entity Types:** `[Spells / weapons, Artifacts, Technology, Concept / Principle / Approach]`
+*   **Primary Relationship Schemas:** "Possession & Usage": Create `affect on` relationships from an `Asset` (L4) to its `Owner` (L4 Character). The `description` MUST explain the asset's function or significance.
+*   **Negative Constraints:** "DO NOT INCLUDE: The plot events where these were used (they belong in `Plot & Events`)."
+
+---
+
+### 4. `domains`: Places & Locations
+
+#### Layer 1: Human-Readable
+*   **Recommended Label:** Places & Locations
+*   **Recommended Description:** The geographical and social environment where events unfold. This covers everything from individual buildings and cities to entire countries, planets, or dimensions.
+
+#### Layer 2: Machine-Executable
+*   **AI Search Keywords:** `["locations in [storyworld]", "map of", "cities", "planets", "kingdoms", "important buildings"]`
+*   **Expected Entity Types:** `[Place / House / Residence / Castle, City / Country / Empire]`
+*   **Primary Relationship Schemas:** "Geographical Hierarchy": Use `parent-child` to show nesting (e.g., a specific room is a child of a castle). Use `linked` to show adjacency or travel routes.
+*   **Negative Constraints:** "DO NOT INCLUDE: The organizations located here (they belong in `Society & Organizations`). DO NOT INCLUDE: Events that happened here (they belong in `Plot & Events`)."
+
+---
+
+### 5. `environment`: Society & Organizations
+
+#### Layer 1: Human-Readable
+*   **Recommended Label:** Society & Organizations
+*   **Recommended Description:** The socio-political landscape of the universe. This includes factions, governments, corporations, secret societies, social institutions, and cultural groups that form the structure of society.
+
+#### Layer 2: Machine-Executable
+*   **AI Search Keywords:** `["factions in [storyworld]", "organizations", "governments", "noble houses", "secret societies", "cultural norms", "social structure"]`
+*   **Expected Entity Types:** `[Organization, Clan / Band / Tribe, Social institutions]`
+*   **Primary Relationship Schemas:** "Political Web": Use `linked` for alliances and rivalries between factions. Use `parent-child` for internal hierarchies (e.g., Ministry -> Department). Use `affect on` to show political influence.
+*   **Negative Constraints:** "DO NOT INCLUDE: Individual leaders or members (they belong in `Characters`)."
+
+---
+
+### 6. `pipeline`: Plot & Events
+
+#### Layer 1: Human-Readable
+*   **Recommended Label:** Plot & Events
+*   **Recommended Description:** The chronology of key events that shape the universe's history. This describes the main narrative arc as well as significant historical milestones, wars, or cataclysms that defined the world's current state.
+
+#### Layer 2: Machine-Executable
+*   **AI Search Keywords:** `["plot summary of [storyworld]", "timeline of events", "major battles", "key historical moments", "story arc", "chronology"]`
+*   **Expected Entity Types:** `[Event]`
+*   **Primary Relationship Schemas:** "Chronological Chain": `Event` entities MUST be connected with `linked` relationships. The `description` of the relationship should state the chronological order (e.g., "Preceded by..." / "Led to..."). `Person / Character` entities should have an `affect on` relationship to the `Event` they participated in.
+*   **Negative Constraints:** "DO NOT INCLUDE: The locations where events occurred as primary entities (they belong in `Places & Locations`)."
+
