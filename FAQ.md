@@ -1066,5 +1066,3 @@ Recommended Description: The "boundary" or "dark zone" of the modern science. Th
 03.03.01.02.06 - pipeline
 Recommended Label: History & Paradigm Shifts
 Recommended Description: The "timeline" or "narrative" of the science's development. This vector tracks the evolution of ideas, key discoveries, scientific revolutions, and the major paradigm shifts that have shaped our current understanding.
-
-
