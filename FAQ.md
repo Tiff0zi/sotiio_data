@@ -1046,3 +1046,25 @@ After this integration, the complete user and system flow will look like this:
 
 
 
+-----------------------------------------------------------
+
+03.03.01.02.01 - entities
+Recommended Label: Objects of Study
+Recommended Description: The catalog of "nouns" that the scientific discipline investigates. This vector answers the question: "What does this science study?". It includes all fundamental entities, from micro-level particles and molecules to macro-level organisms and systems.
+03.03.01.02.02 - tools
+Recommended Label: Methods & Tools
+Recommended Description: The "arsenal" of the scientist. This vector describes the methodologies and instruments used to study the Objects of Study. It includes theoretical frameworks, mathematical apparatus, experimental equipment, and analytical techniques.
+03.03.01.02.03 - domains
+Recommended Label: Branches & Disciplines
+Recommended Description: The primary areas of specialization within the science. Each branch operates as a distinct "jurisdiction" with its own specific models, phenomena, and localized laws (e.g., Newton's Laws in Classical Mechanics, or Mendelian Laws in Genetics).
+03.03.01.02.04 - rules
+Recommended Label: Fundamental Laws & Principles
+Recommended Description: The "constitution" of the field. This vector contains the universal, pervasive principles and laws that are held to be true across all Branches & Disciplines and apply to all Objects of Study. These are the core axioms of the science.
+03.03.01.02.05 - environment
+Recommended Label: Unsolved Problems & Frontiers
+Recommended Description: The "boundary" or "dark zone" of the modern science. This vector defines the context in which research currently operates, outlining the major challenges, unsolved mysteries, and theoretical frontiers that drive the field forward.
+03.03.01.02.06 - pipeline
+Recommended Label: History & Paradigm Shifts
+Recommended Description: The "timeline" or "narrative" of the science's development. This vector tracks the evolution of ideas, key discoveries, scientific revolutions, and the major paradigm shifts that have shaped our current understanding.
+
+
